@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SmartEE.WeatherForecast.Service</name>
+    </assembly>
+    <members>
+        <member name="T:SmartEE.WeatherForecast.Service.Controllers.WeatherForecastController">
+            <summary>
+            Weather Forecast Controller Class
+            </summary>
+        </member>
+        <member name="M:SmartEE.WeatherForecast.Service.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{SmartEE.WeatherForecast.Service.Controllers.WeatherForecastController},Microsoft.AspNetCore.SignalR.IHubContext{SmartEE.WeatherForecast.Service.Hubs.NotificationHub})">
+            <summary>
+            Controller initializer
+            </summary>
+            <param name="logger">Logger(SeriLog) injection param</param>
+            <param name="hubContext">Hub(SignalR) injection param</param>
+        </member>
+        <member name="M:SmartEE.WeatherForecast.Service.Controllers.WeatherForecastController.GetWeatherForecastByCityName(System.String)">
+            <summary>
+            Fetch Weather Forecast By City Name
+            </summary>
+            <param name="cityName">City Name to be queried</param>
+            <returns>Ok, NotFound or BadRequest Http Results..</returns>
+        </member>
+        <member name="T:SmartEE.WeatherForecast.Service.Hubs.NotificationHub">
+            <summary>
+            SignalR hub class
+            </summary>
+        </member>
+        <member name="M:SmartEE.WeatherForecast.Service.Hubs.NotificationHub.OnConnectedAsync">
+            <summary>
+            Processes to be carried out when a new SignalR connection has exposed..
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartEE.WeatherForecast.Service.Program.StartWebServer(System.String[])">
+            <summary>
+            Application web server initialization
+            </summary>
+            <param name="args">Args to be exposed when the application starts</param>
+        </member>
+        <member name="M:SmartEE.WeatherForecast.Service.Program.Shutdown">
+            <summary>
+            Application shut down processes
+            </summary>
+        </member>
+        <member name="M:SmartEE.WeatherForecast.Service.Services.ForecastService.Init(System.String)">
+            <summary>
+            Location service initialization
+            </summary>
+            <param name="wsToken">Forecast service token</param>
+        </member>
+        <member name="M:SmartEE.WeatherForecast.Service.Services.ForecastService.FetchForecastInfo(System.Int32,System.String,System.String)">
+            <summary>
+            Fetches forecast info by city name from related remote api
+            </summary>
+            <param name="cityId">City Id</param>
+            <param name="latitude">City coordinates latitude value</param>
+            <param name="longitude">City coordinates longitude value</param>
+            <returns>ForecastModel</returns>
+        </member>
+        <member name="M:SmartEE.WeatherForecast.Service.Services.LocationService.Init(System.String)">
+            <summary>
+            Location service initialization
+            </summary>
+            <param name="wsToken">Location service token</param>
+        </member>
+        <member name="M:SmartEE.WeatherForecast.Service.Services.LocationService.FetchLocationInfo(System.String)">
+            <summary>
+            Fetches location info by city name from related remote api
+            </summary>
+            <param name="cityName">City Name</param>
+            <returns>LocationModel</returns>
+        </member>
+        <member name="T:StaticDeclarations">
+            <summary>
+            Statik tanımlar
+            </summary>
+        </member>
+        <member name="F:StaticDeclarations.createDirLock">
+            <summary>
+            Klasör oluşturma kilit objesi
+            </summary>
+        </member>
+        <member name="F:StaticDeclarations._StatsPath">
+            <summary>
+            İstatistik dosyalarının tutulduğu varsayılan klasör yolu
+            </summary>
+        </member>
+        <member name="P:StaticDeclarations.StatsPath">
+            <summary>
+            İstatistik dosyalarının tutulduğu klasör yolu
+            </summary>
+        </member>
+        <member name="F:StaticDeclarations._LogPath">
+            <summary>
+            Log dosyalarının tutulduğu varsayılan klasör yolu
+            </summary>
+        </member>
+        <member name="P:StaticDeclarations.LogPath">
+            <summary>
+            Log dosyalarının tutulduğu klasör yolu
+            </summary>
+        </member>
+    </members>
+</doc>
